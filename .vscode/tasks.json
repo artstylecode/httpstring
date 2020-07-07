@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: gcc build active file",
+			"command": "/usr/bin/gcc",
+			"args": [
+				"-g", //编译命令
+				"${workspaceFolder}/sources/*.c", //当前workspace下的hello.c文件
+				"-o", //输出文件命令
+				"${workspaceFolder}/output/${fileBasenameNoExtension}.o" //生成的可执行文件的路径及名称
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "clear",
+			"command": "rm",
+			"args": [
+				"-rf", //编译命令
+				"${workspaceFolder}/output/*" //生成的可执行文件的路径及名称
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}
